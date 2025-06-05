@@ -1,0 +1,189 @@
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1f1f2e, #2a2a3d);
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-attachment: fixed;
+  line-height: 1.6;
+}
+
+/* Modern Glassy Header */
+header {
+  backdrop-filter: blur(14px);
+  background: linear-gradient(90deg, rgba(36, 37, 62, 0.85), rgba(44, 47, 80, 0.85));
+  color: #ffffff;
+  padding: 24px 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Enhanced Navigation */
+header nav {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+header nav a {
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* Main content */
+main {
+  max-width: 860px;
+  margin: 50px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 32px 28px;
+  /* 👈 Add enough internal spacing */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 40px;
+  color: #fff;
+  box-sizing: border-box;
+  /* 👈 Ensures padding is included in width */
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #00bcd4;
+}
+
+/* Form Button */
+form button {
+  background-color: #00c853;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #00a542;
+}
+
+/* Button-style links */
+main a,
+form a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  text-decoration: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+main a:hover,
+form a:hover {
+  background-color: #1e88e5;
+}
+
+/* Glass-style Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  color: #e0e0e0;
+}
+
+table th,
+table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+table th {
+  background-color: rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  color: #ffffff;
+}
+
+table tr:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}

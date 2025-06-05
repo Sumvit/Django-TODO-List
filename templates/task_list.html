@@ -1,0 +1,20 @@
+<!-- templates/task_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Your Tasks{% endblock %}
+
+{% block content %}
+  <h2>Your Tasks</h2>
+  <table>
+    <tr><th>Title</th><th>Status</th><th>End Time</th></tr>
+    {% for task in tasks %}
+      <tr>
+        <td>{{ task.title }}</td>
+        <td>{{ task.status }}</td>
+        <td>{{ task.end_time }}</td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="3">No tasks yet.</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}
