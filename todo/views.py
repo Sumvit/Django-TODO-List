@@ -35,7 +35,6 @@ def signin_view(request):
 def task_list(request):
     tasks = Task.objects.filter(user=request.user).order_by('status', 'end_time')
     return render(request, 'task_list.html', {'tasks': tasks})
-
 @login_required
 def create_task(request):
     if request.method == 'POST':
@@ -47,4 +46,26 @@ def create_task(request):
             return redirect('task_list')
     else:
         form = TaskForm()
-    return render(request, 'task_form.html', {'form': form})
+    return render(request, 'task_form.html', {'form': form,
+                                              'form_title': 'New Task',
+                                              'button_label': 'Create'})
+
+@login_required
+def remove_task(request, task_id):
+    task = Task.objects.get(id=task_id, user=request.user)
+    if task:
+        task.delete()
+    return redirect('task_list')
+@login_required
+def update_task(request, task_id):
+    task = Task.objects.get(id=task_id, user=request.user)
+    if request.method == 'POST':
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('task_list')
+    else:
+        form = TaskForm(instance=task)
+    return render(request, 'task_form.html', {'form': form
+                                              , 'form_title':'Edit Task',
+                                              'button_label': 'Update'})
